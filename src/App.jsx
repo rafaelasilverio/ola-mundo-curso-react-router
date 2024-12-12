@@ -1,15 +1,15 @@
-import { useState } from 'react'
-console.log(window.location)
 
+import Home from './pages/Home';
+import About from './pages/About';
 
-function App() {
-  const [count, setCount] = useState(0)
+const pagina = window.location.pathname === '/' ? <Home/> : <About/>;
+
+const App = () => {
 
   return (
     <>
-      <h1>Olá mundo</h1>
+      {pagina}
     </>
   )
 }
-
 export default App
