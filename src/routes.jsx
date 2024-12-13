@@ -2,13 +2,15 @@
 import Home from './pages/Home';
 import About from './pages/About';
 import { BrowserRouter, Routes, Route } from 'react-router';
+import Menu from './components/Menu';
 
 
-const App = () => {
+const AppRoutes = () => {
 
   return (
     <>
       <BrowserRouter>
+        <Menu/>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/sobremim" element={<About/>}/>
@@ -18,4 +20,4 @@ const App = () => {
     </>
   )
 }
-export default App
+export default AppRoutes
