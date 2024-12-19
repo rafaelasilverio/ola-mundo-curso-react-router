@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
 import DefaultPage from './components/DefaultPage';
+import Post from './pages/Post';
+import NotFound from './components/NotFound';
 
 
 const AppRoutes = () => {
@@ -18,9 +20,10 @@ const AppRoutes = () => {
           <Route path='/' element={<DefaultPage/>}>
             <Route index element={<Home/>}/>
             <Route path="sobremim" element={<About/>}/>
+            <Route path="posts/:id" element={<Post/>}/>
           </Route>
 
-          <Route path="*" element={<div><p>Página não encontrada</p></div>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
 
         <Footer/>
