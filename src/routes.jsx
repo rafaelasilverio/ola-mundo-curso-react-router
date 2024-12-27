@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import DefaultPage from './components/DefaultPage';
 import Post from './pages/Post';
 import NotFound from './components/NotFound';
+import ScrollToTop from './components/ScrollToTop';
 
 
 const AppRoutes = () => {
@@ -14,15 +15,16 @@ const AppRoutes = () => {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <Menu/>
 
         <Routes>
           <Route path='/' element={<DefaultPage/>}>
             <Route index element={<Home/>}/>
             <Route path="sobremim" element={<About/>}/>
-            <Route path="posts/:id" element={<Post/>}/>
           </Route>
 
+          <Route path="posts/:id/*" element={<Post/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
 
